@@ -1,6 +1,6 @@
 <?
 
-    #from github on ipad
+    #removed file on cpanel test
     $d = json_decode(file_get_contents('php://input'), 1);
     http_response_code(200);
     $ch = curl_init();
