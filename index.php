@@ -67,7 +67,7 @@
         
         <link rel="icon" href="main/favicon.ico" type="image/x-icon">
 
-        <title>BTF</title>
+        <title>BTFF</title>
         <link rel="stylesheet" href="main/styles.css">
         
         
