@@ -1,0 +1,24 @@
+name: Deploy to BTF
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Deploy to Server
+        uses: appleboy/ssh-action@v0.1.6
+        with:
+          host: 107.22.187.210
+          username: admin
+          key: ${{ secrets.DEPLOY_KEY }}
+          script: |
+            cd /home/admin/web/buytofill.com/public_html
+            git pull origin main
