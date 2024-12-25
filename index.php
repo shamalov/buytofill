@@ -50,27 +50,10 @@
         <meta name="description" content="BuyToFill">
         <meta name="author" content="">
         <meta name="keywords" content="BuyToFill"> 
-        
         <meta name="robots" content="index, follow">
-        
-        <meta property="og:title" content="BuyToFill">
-        <meta property="og:description" content="Earn with us.">
-        <!--meta property="og:image" content="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/665643dd8c7ac752237b5cef_Discord-OG-1200x630.jpg"-->
-        <meta property="og:url" content="https://www.buytofill.com">
-        <meta property="og:type" content="website">
-        
-        <meta name="twitter:card" content="summary_large_image">
-        
-        <!--meta name="twitter:title" content="BuyToFill">
-        <meta name="twitter:description" content="Earn with us.">
-        <meta name="twitter:image" content="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/665643dd8c7ac752237b5cef_Discord-OG-1200x630.jpg"-->
-        
         <link rel="icon" href="main/favicon.ico" type="image/x-icon">
-
-        <title>BTFF</title>
+        <title>BuyToFill</title>
         <link rel="stylesheet" href="main/styles.css">
-        
-        
         <style>
             body{
                 height:100%;
