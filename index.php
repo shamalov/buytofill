@@ -52,7 +52,7 @@
         <meta name="keywords" content="BuyToFill"> 
         <meta name="robots" content="index, follow">
         <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-        <title>BuyToFill</title>
+        <title>BuyToFillE</title>
         <link rel="stylesheet" href="assets/styles.css">
         <style>
             body{
