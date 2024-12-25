@@ -12,10 +12,10 @@
         header("Location: .");
         exit;
     }*/
-    if (!isset($_SESSION['role']) && basename($_SERVER['PHP_SELF']) != 'index.php') {
-        header('Location: .');
-        exit();
-    }
+    #if (!isset($_SESSION['role']) && basename($_SERVER['PHP_SELF']) != 'index.php') {
+    #    header('Location: .');
+    #    exit();
+    #}
     
     if(isset($_SESSION['role']) && !isset($_SESSION['cryptIV'])){
         $_SESSION['cryptMethod'] = 'AES-256-CBC';
