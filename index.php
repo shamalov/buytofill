@@ -1,7 +1,8 @@
 <?
     require 'assets/control.php';
-    if(isset($_SESSION['role'])) header('Location: /deals');
-    
+    if(isset($_SESSION['role'])){
+        header('Location: /deals');
+    }
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         if(isset($_POST['email']) && isset($_POST['password'])){
             $conn = new mysqli(getenv('DATABASE_HOST'), getenv('DATABASE_USER'), getenv('DATABASE_PASS'), getenv('DATABASE_NAME'));
@@ -26,12 +27,7 @@
                     $_SESSION['fn'] = $row['fn'];
                     $_SESSION['ln'] = $row['ln'];
                     $_SESSION['auid'] = N2A($row['id']);
-                    echo 1;
-                } else {
-                    echo 0;
                 }
-            } else {
-                echo 0;
             }
             
             $stmt->close();
@@ -50,16 +46,10 @@
         <meta name="description" content="BuyToFill">
         <meta name="author" content="">
         <meta name="keywords" content="BuyToFill"> 
-        
         <meta name="robots" content="index, follow">
-        
-        
-        <link rel="icon" href="main/favicon.ico" type="image/x-icon">
-
         <title>BuyToFill</title>
+        <link rel="icon" href="main/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="main/styles.css">
-        
-        
         <style>
             body{
                 height:100%;
@@ -293,15 +283,12 @@
     </body>
     <script>
         let tid;
-    
         async function login(a,e) {
             e.preventDefault();
-            
             const b = await fetch("#", {method:'POST', body: new FormData(a)});
             const c = await b.json();
             if(!c){
                 let toast = document.querySelector("#toast");
-                
                 if(toast.classList == ""){
                     clearTimeout(tid);
                     toast.classList = "show";
