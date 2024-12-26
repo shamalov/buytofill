@@ -54,10 +54,10 @@
         <meta name="robots" content="index, follow">
         
         
-        <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="main/favicon.ico" type="image/x-icon">
 
         <title>BuyToFill</title>
-        <link rel="stylesheet" href="assets/styles.v1.css">
+        <link rel="stylesheet" href="main/styles.css">
         
         
         <style>
