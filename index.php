@@ -29,12 +29,14 @@
                     $_SESSION['auid'] = N2A($row['id']);
                 }
             }
-            
+
             $stmt->close();
             $conn->close();
             exit;
         }
     }
+    echo 'here';
+    exit;
 ?>
 <!DOCTYPE html>
 <html lang="en">
