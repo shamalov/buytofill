@@ -3,15 +3,15 @@
     if(isset($_SESSION['role'])){
         header('Location: /deals');
     }
-    if($_SERVER['REQUEST_METHOD'] == "POST"){
-        if(isset($_POST['email']) && isset($_POST['password'])){
+    if($_SERVER['REQUEST_METHOD'] == "GET"){
+        if(isset($_GET['email']) && isset($_GET['password'])){
             $conn = new mysqli(getenv('DATABASE_HOST'), getenv('DATABASE_USER'), getenv('DATABASE_PASS'), getenv('DATABASE_NAME'));
             echo 'first';
             if($conn->connect_error){
                 die($conn->connect_error);
             }
-            $email = $_POST['email'];
-            $password = $_POST['password'];
+            $email = $_GET['email'];
+            $password = $_GET['password'];
             echo 'second';
             $stmt = $conn->prepare("SELECT pass,id,level,fn,ln, 'filler' as role FROM filler WHERE email = ? UNION SELECT pass,id,level,fn,ln, 'buyer' as role FROM buyer WHERE email = ? UNION SELECT pass,id,level,fn,ln, 'staff' as role FROM staff WHERE email = ?");
             if (!$stmt) {
