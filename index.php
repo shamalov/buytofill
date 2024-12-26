@@ -1,6 +1,6 @@
 <?
     require 'assets/control.php';
-    if(isset($_SESSION['role'])) header('Location: deals');
+    if(isset($_SESSION['role'])) header('Location: /deals');
     
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         if(isset($_POST['email']) && isset($_POST['password'])){
