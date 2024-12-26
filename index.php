@@ -5,13 +5,14 @@
     }
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         if(isset($_POST['email']) && isset($_POST['password'])){
-            echo 'here';
-            exit;
             $conn = new mysqli(getenv('DATABASE_HOST'), getenv('DATABASE_USER'), getenv('DATABASE_PASS'), getenv('DATABASE_NAME'));
-            if($conn->connect_error) die($conn->connect_error);
+            echo 'first';
+            if($conn->connect_error){
+                die($conn->connect_error);
+            }
             $email = $_POST['email'];
             $password = $_POST['password'];
-            
+            echo 'second';
             $stmt = $conn->prepare("SELECT pass,id,level,fn,ln, 'filler' as role FROM filler WHERE email = ? UNION SELECT pass,id,level,fn,ln, 'buyer' as role FROM buyer WHERE email = ? UNION SELECT pass,id,level,fn,ln, 'staff' as role FROM staff WHERE email = ?");
             if (!$stmt) {
                 die("Prepare failed: " . $conn->error);
@@ -19,7 +20,7 @@
             $stmt->bind_param("sss", $email, $email, $email);
             $stmt->execute();
             $result = $stmt->get_result();
-    
+            echo 'third';
             if($result && $result->num_rows > 0){
                 $row = $result->fetch_assoc();
                 if(password_verify($password, $row['pass'])){
@@ -34,7 +35,7 @@
                     $_SESSION['auid'] = N2A($row['id']);
                 }
             }
-
+            echo 'fourth';
             $stmt->close();
             $conn->close();
             exit;
