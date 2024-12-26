@@ -33,6 +33,7 @@
                     $_SESSION['fn'] = $row['fn'];
                     $_SESSION['ln'] = $row['ln'];
                     $_SESSION['auid'] = N2A($row['id']);
+                    header('Location: /deals');
                 }
             }
             echo 'fourth';
@@ -268,7 +269,7 @@
             <div>
                 <h2>Welcome to BuyToFill</h2>
                 <h3>Profit in no time.</h3>
-                <form onsubmit="login(this,event)">
+                <form>
                     <div>
                         <input id="email" type="email" name="email" autocomplete="email" placeholder="johndoe@gmail.com" required>
                         <label for="email">Email</label>
