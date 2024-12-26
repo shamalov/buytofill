@@ -258,7 +258,7 @@
             </button>
             <p>buytofill</p>
             <div id="hp-l">
-                <button type="button">BETA</button>
+                <button type="button">TEST</button>
                 <!--button type="button">Overview</button>
                 <button type="button">Benefits</button>
                 <button type="button">Terms & Conditions</button>
